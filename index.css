@@ -1,0 +1,98 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family:'Times New Roman', Times, serif;
+  margin: 0;
+}
+
+h1{
+  margin-top: 1.5%;
+  margin-bottom: 1%;
+}
+
+button{
+  padding: 0.5% 1%;
+  margin-bottom: 1%;
+  font-family:'Courier New', Courier, monospace;
+  border: 1px solid #c897f0;
+  border-radius: 8px;
+  background: #f5f5f5;
+  font-size: 14px;
+}
+
+.game-over{
+  background: linear-gradient(225deg, #c897f0,#9e47e5);
+  color: white;
+  border: 1px solid #8c03fc;
+}
+
+#main{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 75%;
+}
+
+.card {
+  /* width: 100px; */
+  height: 20vh;
+  background: linear-gradient(225deg, #880fe8,#9e47e5,#880fe8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  border: solid #222 1px;
+  border: solid #9e47e5 1px;
+}
+
+.card.flipped {
+  background: #222;
+  background: white;
+  color: #9e47e5;
+}
+
+
+.card .front,
+.card .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.card .back {
+  transform: rotateY(180deg);
+}
+
+.flipped .back {
+  backface-visibility: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 90px;
+}
+
+@media (max-width: 800px) ,(max-height:480px) {
+  h1{
+    font-size: 1.5rem;
+  }
+  .flipped .back {
+    font-size: 60px;
+  }
+}
+
+@media (max-width: 420px),(max-height:320px){
+  h1{
+    font-size: 1rem;
+  }
+  .flipped .back {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 280px),(max-height:220px){
+  .flipped .back {
+    font-size: 30px;
+  }
+}
