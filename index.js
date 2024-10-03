@@ -97,7 +97,6 @@ function startGame() {
   buttonEle.classList.remove('game-over');
   const shuffledCards = shuffle(cardsArray);
   let mainGameEle = document.querySelector("#main");
-  console.log(shuffledCards);
   shuffledCards.forEach(cardValue => {
     const card = createCard(cardValue);
     mainGameEle.appendChild(card);
